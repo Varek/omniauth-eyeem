@@ -1,2 +1,2 @@
 require "omniauth-eyeem/version"
-require 'omniauth/strategies/eye_em'
+require 'omniauth/strategies/eyeem'

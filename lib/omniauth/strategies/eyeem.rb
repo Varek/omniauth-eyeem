@@ -2,24 +2,24 @@ require 'omniauth-oauth2'
 
 module OmniAuth
   module Strategies
-    class AngelList < OmniAuth::Strategies::OAuth2
+    class EyeEm < OmniAuth::Strategies::OAuth2
       option :client_options, {
         :site => 'https://www.eyeem.com/api/v2',
         :authorize_url => 'http://www.eyeem.com/oauth/authorize',
         :token_url => 'http://www.eyeem.com/api/v2/oauth/token'
       }
 
-      option :name, "eye_em"
+      option :name, "eyeem"
 
-      uid { raw_info['id'] }
+      uid { raw_info['user']['id'] }
 
       info do
         {
-          #:nickname => raw_info['username'],
-          #:name => raw_info['name'],
-          #:image => raw_info['avatar_image']['url'],
-          #:type => raw_info['type'],
-          #:counts => raw_info['counts']
+          :nickname => raw_info['user']['nickname'],
+          :name => raw_info['user']['fullname'],
+          :image => raw_info['user']['photoUrl'],
+          :description => raw_info['user']['description'],
+          :email => raw_info['user']['email']
         }
       end
 
