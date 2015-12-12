@@ -4,9 +4,9 @@ module OmniAuth
   module Strategies
     class EyeEm < OmniAuth::Strategies::OAuth2
       option :client_options, {
-        :site => 'https://www.eyeem.com/api/v2',
-        :authorize_url => 'http://www.eyeem.com/oauth/authorize',
-        :token_url => 'http://www.eyeem.com/api/v2/oauth/token'
+        :site => 'https://api.eyeem.com/v2',
+        :authorize_url => 'https://www.eyeem.com/oauth/authorize',
+        :token_url => 'https://api.eyeem.com/v2/oauth/token'
       }
 
       option :name, "eyeem"
